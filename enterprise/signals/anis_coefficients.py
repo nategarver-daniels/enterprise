@@ -245,7 +245,7 @@ def clmFromMap_fast(h, lmax):
     Use Healpix spherical harmonics for computational efficiency
     """
     alm = hp.sphtfunc.map2alm(h, lmax=lmax)
-    alm[0] = np.sum(h) * np.sqrt(4*np.pi) / len(h)  # why doesn't healpy do this? # noqa: E501
+    alm[0] = np.sum(h) * np.sqrt(4*np.pi) / len(h)
 
     return clmFromAlm(alm)
 

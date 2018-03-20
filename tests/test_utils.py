@@ -15,6 +15,7 @@ from enterprise.pulsar import Pulsar
 from enterprise.signals import utils
 from enterprise.signals import anis_coefficients as anis
 import enterprise.constants as const
+from enterprise.signals import anis_coefficients as anis
 
 
 class TestUtils(unittest.TestCase):
