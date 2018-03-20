@@ -13,6 +13,7 @@ import numpy as np
 from tests.enterprise_test_data import datadir
 from enterprise.pulsar import Pulsar
 from enterprise.signals import utils
+from enterprise.signals import anis_coefficients as anis
 import enterprise.constants as const
 
 
@@ -151,7 +152,7 @@ class TestUtils(unittest.TestCase):
         assert np.allclose(utils.turnover(f, log10_A, gamma,
                                           lf0, kappa, beta),pt), msg
 
-    def test_orf():
+    def test_orf(self):
         """Test ORF functions."""
         p1 = np.array([0.3, 0.648, 0.7])
         p2 = np.array([0.2, 0.775, -0.6])
