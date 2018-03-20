@@ -1,18 +1,18 @@
-from __future__ import division
-
-import numpy as np
-import healpy as hp
-import math
-import scipy.linalg as sl, scipy.special as ss
-
+#anis_coefficients.py
 """
 Script to compute the correlation basis-functions for various anisotropic
 configurations of the GW background energy-density
 
 -- Rutger van Haasteren (June 2014)
 -- Stephen Taylor (modifications, February 2016)
-
 """
+
+from __future__ import (absolute_import, division,
+                        print_function, unicode_literals)
+
+import numpy as np
+import healpy as hp
+import scipy.special as ss
 
 
 def real_sph_harm(mm, ll, phi, theta):
@@ -20,13 +20,13 @@ def real_sph_harm(mm, ll, phi, theta):
     The real-valued spherical harmonics.
     """
     if mm>0:
-        ans = (1./math.sqrt(2)) * \
+        ans = (1./np.sqrt(2)) * \
                 (ss.sph_harm(mm, ll, phi, theta) + \
                 ((-1)**mm) * ss.sph_harm(-mm, ll, phi, theta))
     elif mm==0:
         ans = ss.sph_harm(0, ll, phi, theta)
     elif mm<0:
-        ans = (1./(math.sqrt(2)*complex(0.,1))) * \
+        ans = (1./(np.sqrt(2)*complex(0.,1))) * \
                 (ss.sph_harm(-mm, ll, phi, theta) - \
                 ((-1)**mm) * ss.sph_harm(mm, ll, phi, theta))
 
