@@ -494,9 +494,9 @@ def Function(func, name='', **func_kwargs):
 def get_funcargs(func):
     """Convenience function to get args and kwargs of any function."""
     try: #PY3
-        self.func_args = inspect.getfullargspec(func).args
+        argspec = inspect.getfullargspec(func)
     except: #PY2
-        self.func_args = inspect.getargspec(func).args
+        argspec = inspect.getargspec(func)
 
     if argspec.defaults is None:
         args = argspec.args
